@@ -9,22 +9,15 @@
 #include "BolnickiPacijent.h"
 #include "AmbulantniPacijent.h"
 #include <vector>
+#include <memory>
 
 class Bolnica {
 private:
-vector<Pacijent*> pacijenti;
+shared_ptr<vector<Pacijent>> pacijenti;
 public:
-    Bolnica() = default;
     friend ostream& operator<<(ostream& os, const Bolnica& bolnica);
     friend istream& operator>>(istream& is, Bolnica& bolnica);
-
-    Pacijent* operator!() const;
-
-    ~Bolnica(){
-        for(Pacijent* pacijent : pacijenti){
-            delete pacijent;
-        }
-    }
+    shared_ptr<Pacijent> operator!() const;
 };
 
 #endif //BOLNICAROK_BOLNICA_H

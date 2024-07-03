@@ -17,7 +17,7 @@ string BolnickiPacijent::getDatumPrijema() const {
     return this->datumPrijema;
 }
 
-void BolnickiPacijent::prikaziDetalje() const {
+void BolnickiPacijent::prikaziDetalje() {
     cout << "Detalji o pacijentu:" << endl;
     cout << "Ime: " << this->ime << endl;
     cout << "Prezime: " << this->prezime << endl;

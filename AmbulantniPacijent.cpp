@@ -16,14 +16,14 @@ string AmbulantniPacijent::getImeDoktora() const {
     return this->imeDoktora;
 }
 
-void AmbulantniPacijent::prikaziDetalje() const {
+void AmbulantniPacijent::prikaziDetalje(){
     cout << "Detalji o pacijentu:" << endl;
     cout << "Ime: " << this->ime << endl;
     cout << "Prezime: " << this->prezime << endl;
     cout << "Starost: " << this->starost << endl;
     cout << "Dijagnoza: " << this->dijagnoza << endl;
-    cout << "Broj sobe: " << this->datumPregleda << endl;
-    cout << "Datum prijema: " << this->imeDoktora << endl;
+    cout << "Datum pregleda: " << this->datumPregleda << endl;
+    cout << "Ime doktora: " << this->imeDoktora << endl;
 }
 
 ostream& operator>>(ostream& os, const AmbulantniPacijent& ambulantniPacijent){

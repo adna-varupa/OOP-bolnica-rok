@@ -16,44 +16,53 @@ ostream& operator<<(ostream& os, const Bolnica& bolnica){
     return os;
 }
 
-istream& operator>>(istream& is,Bolnica& bolnica){
+istream& operator>>(istream& is,Bolnica& bolnica) {
     string tipPacijenta;
     cout << "Unesite tip pacijenta(bolnicki/ambulantni):";
     is >> tipPacijenta;
+    is.ignore();
 
-    if(tipPacijenta == "bolnicki"){
-        string ime,prezime,dijagnoza,datumPrijema;
-        int starost,brSobe;
+    if (tipPacijenta == "bolnicki") {
+        string ime, prezime, dijagnoza, datumPrijema;
+        int starost, brSobe;
         cout << "Unesite ime: ";
-        is >> ime;
+        getline(is, ime);
         cout << "Unesite prezime: ";
-        is >> prezime;
+        getline(is, prezime);
+        cout << "Unesite starost: ";
+        is >> starost;
+        is.ignore(); // Clear the newline character left in the input buffer
         cout << "Unesite dijagnozu: ";
         is >> dijagnoza;
-        cout << "Unesite br sobe: ";
-        is >> brSobe
+        cout << "Unesite broj sobe: ";
+        is >> brSobe;
+        is.ignore(); // Clear the newline character left in the input buffer
         cout << "Unesite datum prijema: ";
-        is >> datumPrijema;
-        bolnica.pacijenti.push_back(new BolnickiPacijent(ime,prezime,starost,dijagnoza,brSobe,datumPrijema));
-    }else if(tipPacijenta == "ambulantni"){
-        string ime,prezime,dijagnoza,datumPregleda, imeDoktora;
+        getline(is, datumPrijema);
+        bolnica.pacijenti.push_back(new BolnickiPacijent(ime, prezime, starost, dijagnoza, brSobe, datumPrijema));
+    } else if (tipPacijenta == "ambulantni") {
+        string ime, prezime, dijagnoza, datumPregleda, imeDoktora;
         int starost;
         cout << "Unesite ime: ";
-        is >> ime;
+        getline(is, ime);
         cout << "Unesite prezime: ";
-        is >> prezime;
+        getline(is, prezime);
+        cout << "Unesite starost: ";
+        is >> starost;
+        is.ignore(); // Clear the newline character left in the input buffer
         cout << "Unesite dijagnozu: ";
-        is >> dijagnoza;
-        cout << "Unesite br sobe: ";
-        is >> datumPregleda;
-        cout << "Unesite datum prijema: ";
-        is >> imeDoktora;
-        bolnica.pacijenti.push_back(new AmbulantniPacijent(ime,prezime,starost,dijagnoza,datumPregleda,imeDoktora));
-    }else{
-        throw invalid_argument("Nepoznat tip pacijenta");
+        getline(is, dijagnoza);
+        cout << "Unesite datum pregleda: ";
+        getline(is, datumPregleda);
+        cout << "Unesite ime doktora: ";
+        getline(is, imeDoktora);
+        bolnica.pacijenti.push_back(
+                new AmbulantniPacijent(ime, prezime, starost, dijagnoza, datumPregleda, imeDoktora));
+    } else {
+        throw invalid_argument("Nepoznat tip pacijenta.");
     }
-    return is;
 }
+
 
 Pacijent *Bolnica::operator!() const {
     if(pacijenti.empty()){

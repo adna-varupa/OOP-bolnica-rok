@@ -18,7 +18,7 @@ protected:
     string dijagnoza;
 public:
     Pacijent(string& ime, string& prezime, int starost, string& dijagnoza);
-    virtual void prikaziDetalje() const;
+    virtual void prikaziDetalje() = 0;
     string getIme() const;
     string getPrezime() const;
     string getDijagnoza() const;

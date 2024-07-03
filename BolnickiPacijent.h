@@ -14,7 +14,7 @@ private:
     string datumPrijema;
 public:
     BolnickiPacijent(string& ime, string& prezime, int starost, string& dijagnoza, int brSobe, string& datumPrijema);
-    void prikaziDetalje() const override;
+    void prikaziDetalje() override;
     bool operator==(const BolnickiPacijent& bolnickiPacijent);
     friend ostream& operator>>(ostream& os, const BolnickiPacijent& bolnickiPacijent);
     int getBrSobe() const;
