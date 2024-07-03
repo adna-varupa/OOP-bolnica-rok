@@ -1,0 +1,6 @@
+# ninja log v5
+30	1673	7417099780935293	CMakeFiles/BolnicaRok.dir/Pacijent.cpp.obj	7719fcca4ec3ba95
+36	1744	7417099781145482	CMakeFiles/BolnicaRok.dir/AmbulantniPacijent.cpp.obj	f0887575ad5137f5
+1	1745	7417099781382717	CMakeFiles/BolnicaRok.dir/BolnickiPacijent.cpp.obj	23903387ea508c44
+33	1745	7417099781382717	CMakeFiles/BolnicaRok.dir/main.cpp.obj	16572822c43b21d1
+39	1746	7417099781392743	CMakeFiles/BolnicaRok.dir/Bolnica.cpp.obj	da61215295c7ca57
