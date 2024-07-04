@@ -27,15 +27,15 @@ void AmbulantniPacijent::prikaziDetalje(){
 }
 
 ostream& operator>>(ostream& os, const AmbulantniPacijent& ambulantniPacijent){
-    ofstream outFile("BolnickiPacijenti.txt", ios::app);
+    ofstream outFile("AmbulantniPacijenti.txt", ios::app);
 
     if(outFile.is_open()){
         outFile << "Ime: " << ambulantniPacijent.getIme() << endl;
         outFile << "Prezime: " << ambulantniPacijent.getPrezime() << endl;
         outFile << "Starost: " << ambulantniPacijent.getStarost() << endl;
         outFile << "Dijagnoza: " << ambulantniPacijent.getDijagnoza() << endl;
-        outFile << "Broj sobe: " << ambulantniPacijent.getDatumPregleda() << endl;
-        outFile << "Datum Prijema: " << ambulantniPacijent.getImeDoktora() << endl;
+        outFile << "Datum pregleda: " << ambulantniPacijent.getDatumPregleda() << endl;
+        outFile << "Ime doktora: " << ambulantniPacijent.getImeDoktora() << endl;
         outFile.close();
     } else {
         cerr << "Nije moguce otvoriti fajl." << endl;

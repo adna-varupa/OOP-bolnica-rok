@@ -1,0 +1,18 @@
+Ime: hilmo
+Prezime: hilmic
+Starost: 60
+Dijagnoza: star
+Broj sobe: 8
+Datum Prijema: 222222
+Ime: hilmo
+Prezime: hilmic
+Starost: 60
+Dijagnoza: star
+Broj sobe: 8
+Datum Prijema: 2221929
+Ime: hilmo
+Prezime: hilmic
+Starost: 80
+Dijagnoza: bolestan
+Broj sobe: 9
+Datum Prijema: 2o3903
